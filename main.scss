@@ -3,5 +3,11 @@ $color: royalblue;
 .container {
   h1 {
     color: $color;
+    /* 주석을 처리하는 방식 1 */
+    /* font-size: 60px; */
+    
+    // 주석을 처리하는 방식 2
+    // background-color: orange;
+    // 이 주석은 scss -> css로 컴파일 시 주석된 부분이 나타나지 않는다.
   }
 }

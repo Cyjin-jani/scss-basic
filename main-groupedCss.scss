@@ -1,0 +1,31 @@
+// 중첩된 속성
+// 네임스페이스가 중첩되는(동일한) css속성은 그룹화해서 관리할 수 있다.
+// 대신 주의사항은 속성명 다음에 :를 넣어줘야하고 속성 정의가 끝나면 꼭 세미콜론으로 마쳐줘야한다.
+
+.box {
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  };
+  margin: {
+    top: 10px;
+    left: 20px;
+  };
+  padding: {
+    top: 10px;
+    bottom: 10px;
+  };
+}
+
+/* 위 구문은 아래와 같다.
+.box {
+  font-weight: bold;
+  font-size: 10px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+*/

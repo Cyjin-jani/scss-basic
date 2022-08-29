@@ -1,0 +1,47 @@
+// & - ampersand 
+// 자신이 포함된 영역의 상위 선택자를 참조한다.
+
+// 예제 1
+.btn {
+  position: absolute;
+  &.active {
+    color: red;
+  }
+}
+/* 위 구문은 아래와 같다.
+.btn.active {
+  color: red;
+}
+*/
+
+// 예제 2
+.list {
+  li {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+/* 위 구문은 아래와 같다.
+.list li:last-child {
+  margin-right: 0;
+}
+*/
+
+// 예제 3
+.fs {
+  &-small { font-size: 12px; }
+  &-medium { font-size: 14px; }
+  &-large { font-size: 16px; }
+}
+/* 위 구문은 아래와 같다.
+.fs-small {
+  font-size: 12px;
+}
+.fs-medium {
+  font-size: 14px;
+}
+.fs-large {
+  font-size: 16px;
+}
+*/

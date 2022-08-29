@@ -1,0 +1,37 @@
+// 변수에 대해
+
+// 변수가 선언된 중괄호 영역에서는 전체적으로 사용이 가능하다. => 블록 스코프와 같은 느낌...
+// 변수명: size, 값: 100px
+$size: 100px; // 전역변수
+
+.container {
+  $size2: 200px; // .container 내부에서만 사용 가능한 지역변수
+  position: fixed;
+  top: $size2;
+  .item {
+    // 변수 값 재할당하기
+    $size2: 120px;
+    width: $size2;
+    height: $size2;
+    transform: translateX($size2);
+  }
+  // 주의사항! 위에서 $size2를 120px로 재할당 하였기 때문에 
+  // 아래부터는 스코프와 상관없이 120px로 되어버린다.
+  left: $size2; // 120px; (200이 아님)
+}
+/* 위 구문은 아래와 같다.
+.container {
+  position: fixed;
+  top: 200px;
+  left: 120px;
+}
+.container .item {
+  width: 120px;
+  height: 120px;
+  transform: translateX(120px);
+}
+*/
+
+.box {
+  width: $size; // $size2는 지역변수라 접근이 불가하다.
+}
